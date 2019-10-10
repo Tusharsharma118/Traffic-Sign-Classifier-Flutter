@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:http/http.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:traffic_sign_identity/models/ClassifierResult.dart';
@@ -113,18 +113,25 @@ Widget _renderResult(AsyncSnapshot snapshot, File image, BuildContext context) {
           margin: EdgeInsets.symmetric(vertical: 10),
         ),
         Padding(
+          padding: EdgeInsets.symmetric(horizontal: 120.0,vertical: 15.0),
+          child: Text(
+            'Class: ' + snapshot.data.predicitionClass.toString(), // Dependent
+            style: TextStyle(fontSize: 28.0),
+          ),
+        ),Padding(
           padding: EdgeInsets.symmetric(horizontal: 120.0,vertical: 5.0),
           child: Text(
-            'Class: ' + snapshot.data.predicitionClass, // Dependent
-            style: TextStyle(fontSize: 32.0),
+            'Confidence: ' + snapshot.data.confidence.toString(), // Dependent
+            style: TextStyle(fontSize: 24.0),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.0),
+        Center(
+          //padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: SingleChildScrollView(
+            padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
             child: Text(
               snapshot.data.classDesc, // Dependent
-              style: TextStyle(fontSize: 28.0),
+              style: TextStyle(fontSize: 24.0),
             ),
           ),
         )
@@ -145,6 +152,8 @@ Widget _renderResult(AsyncSnapshot snapshot, File image, BuildContext context) {
 // }
 //}
 
+
+// Trial Code for On Device ML WIP
 // Future<Null> _loadModel() async {
 //   try {
 //     const platform = const MethodChannel('tushar/tensorflow');

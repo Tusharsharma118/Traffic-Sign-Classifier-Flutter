@@ -48,7 +48,7 @@ class _PredictorPageState extends State<PredictorPage> {
       return Post.fromJson(json.decode(response.body));
     } else {
       // If that call was not successful, throw an error.
-       print("ERROR");
+      print("ERROR");
       throw Exception('Failed to load post');
     }
   }
@@ -58,7 +58,7 @@ class _PredictorPageState extends State<PredictorPage> {
     _doNothing();
     // End test code
     Navigator.pushNamed(context, ClassifierResultRoute,
-        arguments: {'image': _image, 'posts' : fetchResults()});
+        arguments: {'image': _image, 'posts': fetchResults()});
     _selectedButton = 0;
     if (_image != null) {
       _selectedButton = 2;
@@ -120,7 +120,6 @@ class _PredictorPageState extends State<PredictorPage> {
         _predict(context);
         break;
       default:
-        null;
     }
   }
 

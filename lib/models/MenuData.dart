@@ -9,7 +9,7 @@ class MenuData{
 
     static List<MenuData> fetchAll(){
       return [MenuData('CLASSIFY TRAFFIC SIGN','assets/images/predict.jpg',ClassifierTitleRoute),
-      MenuData('Prediction History','assets/images/predict2.jpg',ClassifierResultRoute),
-      MenuData('About Us','assets/images/AboutUs.jpg',AboutUsRoute)];
+      MenuData('PREDICTION HISTORY','assets/images/predict2.jpg',HistoryPage),
+      MenuData('ABOUT US','assets/images/AboutUs.jpg',AboutUsRoute)];
     }
   }

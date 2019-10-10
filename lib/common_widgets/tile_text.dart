@@ -14,23 +14,12 @@ class TileText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+   
     return Column(
     
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        // Container(
-        //   height: 100.00,
-        //   decoration: BoxDecoration(
-        //     image: DecorationImage(
-        //       image: this.titleImagePath == ''
-        //           ? null
-        //           : AssetImage(this.titleImagePath),
-        //       fit: BoxFit.fill,
-        //     ),
-        //   ),
-        // ),
         Container(
           padding: EdgeInsets.fromLTRB(10, 30, 10, 10),
           child: Text(
